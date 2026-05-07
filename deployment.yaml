@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymavenapp-deployment
+  labels:
+    app: mymavenapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mymavenapp
+  template:
+    metadata:
+      labels:
+        app: mymavenapp
+    spec:
+      containers:
+      - name: mymavenapp
+        image: mymavenapp:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
