@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mymavenapp
-        image: mymavenapp:latest
+        image: manjunatha03/mymavenapp:latest
         ports:
         - containerPort: 8080
         resources:
